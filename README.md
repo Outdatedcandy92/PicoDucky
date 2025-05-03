@@ -15,9 +15,7 @@ PicoDucky is a minimalist, USB-stick-style RP2040 development board designed to 
 
 Watch the PicoDucky in action:
 
-<p align="center">
-  <video src="./img/demo.mp4" controls width="80%"></video>
-</p>
+![Image](./img/demo.gif)
 
 ## 🔧 Features
 
