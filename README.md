@@ -24,6 +24,8 @@ Watch the PicoDucky in action:
 - Compact Size (Roughly 39x15x1.6 mm)
 - 1 Programmable Button
 - 2 Programmable RGB LEDs
+- Can act like a HID Device
+- Can be used as a Security Key
 
 ## 📐 Schematic & PCB
 ![Image](./img/render_image.png)
