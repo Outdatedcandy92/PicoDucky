@@ -1,64 +1,32 @@
-# PicoDucky V1.0
-> Version 2 *might* be released soon
+# PicoDucky V2.0
+
+PicoDucky Version 2.0 is a minimalist, USB-stick-style RP2350 board designed to be used as a security key or as a rubber ducky.
+
+![img](https://hc-cdn.hel1.your-objectstorage.com/s/v3/ae970f0a6f5bb1eed9011fdd2f88bf826c3ecb2c_image.png)
 
 
-PicoDucky is a minimalist, USB-stick-style RP2040 development board designed to primarily act as [Rubber Ducky](https://shop.hak5.org/products/usb-rubber-ducky) styled HID device. The design was inspired by an [ATtiny85](https://www.pcboard.ca/mini-attiny85-usb) board that I owned which I really liked.
+All the source file for this board are located in `/src/V2.0`
 
-
-
-<p align="center">
-  <img src="./img/img.jpg" alt="Board Front" width="45%" style="margin-right: 5px;" />
-  <img src="./img/img2.jpg" alt="Board Back" width="45%" />
-</p>
-
-## 🎥 Demo
-
-Watch the PicoDucky in action:
-
-![Image](./img/demo.gif)
 
 ## 🔧 Features
 
-- RP2040 microcontroller (Dual-core ARM Cortex-M0+ @ 133MHz)
+- RP2350 Microcontroller
 - Plug-and-play USB-A form factor
-- Compact Size (Roughly 39x15x1.6 mm)
+- Compact Size 
 - 1 Programmable Button
 - 2 Programmable RGB LEDs
 - Can act like a HID Device
 - Can be used as a Security Key
 
 ## 📐 Schematic & PCB
-![Image](./img/render_image.png)
-![Image](./img/pcb_image.png)
-![Image](./img/schematic_image.png)
+![IMG](https://hc-cdn.hel1.your-objectstorage.com/s/v3/9a598c98e71bae9ca623dc363c0f05c66eb1a79a_image.png)
+![IMG](https://hc-cdn.hel1.your-objectstorage.com/s/v3/29afcae914f33e2b16b359cace18a4e01a88d22d_image.png)
+![IMG](https://hc-cdn.hel1.your-objectstorage.com/s/v3/b4b3f82e9c5ca1cb7696126d628875e0a9d8d85d_image.png)
 
-## 📂 Project File Layout
-
-```plaintext
-PicoDucky/
-├── LICENSE                # License file (MIT License)
-├── [README.md](http://_vscodecontentref_/0)              # Project documentation
-├── code/                  # Source code for firmware or scripts
-├── img/                   # Images for documentation
-│   ├── img.jpg            # Board front image
-│   ├── img2.jpg           # Board back image
-│   ├── pcb_image.png      # PCB render
-│   ├── render_image.png   # 3D render of the board
-│   ├── schematic_image.png # Schematic diagram
-├── src/                   # Design files and production resources
-│   ├── PCB.pdf            # PCB layout in PDF format
-│   ├── Schematic.pdf      # Schematic in PDF format
-│   ├── CAD/               # CAD files for the PCB
-│   │   ├── PCB.step       # STEP file for 3D modeling
-│   ├── EasyEDA/           # EasyEDA project files
-│   │   ├── PicoDucky.epro # EasyEDA project file
-│   ├── Production/        # Files for manufacturing
-│       ├── BOM.csv        # Bill of Materials
-│       ├── gerber.zip     # Gerber files for PCB fabrication
-│       ├── PickAndPlace.xlsx # Pick-and-place file for assembly
-```
 
 ##  🚀 Getting Started
+
+### As a HID Device
 
 1. Hold `BOOT` button while plugging in the board
 2. Download and then drag and drop the `.uf2` from [CircuitPython](https://circuitpython.org/board/raspberry_pi_pico/)
@@ -68,3 +36,14 @@ PicoDucky/
 6. Copy `adafruit-hid` folder and paste it into the CIRCUITPY `lib` folder.
 7. Open `code.py` and write your own code or copy the demo code from the repo `./code/code.py`
 8. All done!
+
+### As a Security Key
+
+1. Go to the [PicoFIDO getting started page](https://www.picokeys.com/getting-started/).
+2. Download the Pico FIDO firmware for PicoDucky V2.
+3. Hold the `BOOT` button while plugging the board into your computer.
+4. Drag and drop the downloaded `.uf2` file onto the device that appears.
+5. Unplug and replug the USB to reboot the board.
+6. Visit the [Pico Commissioner](https://www.picokeys.com/pico-commissioner/) to commission your security key.
+
+
