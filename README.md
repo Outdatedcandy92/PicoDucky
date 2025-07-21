@@ -2,9 +2,14 @@
 
 PicoDucky Version 2.0 is a minimalist, USB-stick-style RP2350 board designed for use as a security key or rubber ducky.
 
-![img](https://hc-cdn.hel1.your-objectstorage.com/s/v3/ae970f0a6f5bb1eed9011fdd2f88bf826c3ecb2c_image.png)
+![img](https://hc-cdn.hel1.your-objectstorage.com/s/v3/23ab872e737496dae9e3eb95c55f73eade428b58_reee.png)
 
 All source files for this board are located in `/src/V2.0`.
+
+
+## Demo
+![img](https://hc-cdn.hel1.your-objectstorage.com/s/v3/27b855924be8dcb9752f81685ae253188b21c567_output.gif)
+![img](https://hc-cdn.hel1.your-objectstorage.com/s/v3/0757f03562bd36bf768b994c4cd48c314255da83_output1.gif)
 
 ## 🔧 Features
 
