@@ -8,8 +8,15 @@ All source files for this board are located in `/src/V2.0`.
 
 
 ## Demo
-![img](https://hc-cdn.hel1.your-objectstorage.com/s/v3/27b855924be8dcb9752f81685ae253188b21c567_output.gif)
-![img](https://hc-cdn.hel1.your-objectstorage.com/s/v3/0757f03562bd36bf768b994c4cd48c314255da83_output1.gif)
+
+
+https://github.com/user-attachments/assets/0f9841d5-21af-471a-b05b-d26365da83c9
+
+
+
+https://github.com/user-attachments/assets/b1c333a0-0428-4b33-87e8-6b284e2b4eb3
+
+
 
 ## 🔧 Features
 
