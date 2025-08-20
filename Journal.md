@@ -71,3 +71,10 @@ I was using the AMS1117-3.3 as the LDO which provides up to 1A of current but al
 After switching to a smaller LDO I feel like there is too much free space on the board, I'm contemplating switch back to the SOT-23 package for the LDO.
 
 ### Time Spent: 2 Hours
+
+
+# Sometime in June 
+
+I recieved my board!! and phew it worked first try, everything worked, nothing was shorted, it looked beautiful with ENIG.
+
+For testing out the firmware on it I went and used https://www.picokeys.com/pico-fido/ and installed it on my picoducky and then checked it on webauthn.io
