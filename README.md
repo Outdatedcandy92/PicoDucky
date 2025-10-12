@@ -29,9 +29,9 @@ https://github.com/user-attachments/assets/b1c333a0-0428-4b33-87e8-6b284e2b4eb3
 - Security key functionality
 
 ## 📐 Schematic & PCB
-![IMG](https://hc-cdn.hel1.your-objectstorage.com/s/v3/9a598c98e71bae9ca623dc363c0f05c66eb1a79a_image.png)
-![IMG](https://hc-cdn.hel1.your-objectstorage.com/s/v3/29afcae914f33e2b16b359cace18a4e01a88d22d_image.png)
-![IMG](https://hc-cdn.hel1.your-objectstorage.com/s/v3/b4b3f82e9c5ca1cb7696126d628875e0a9d8d85d_image.png)
+![IMG](https://hc-cdn.hel1.your-objectstorage.com/s/v3/3163d364ef49a9e3d1479ba2de81d1feff53fa4d_sch_picoducky_1-p1_2025-10-12.png)
+![IMG](https://hc-cdn.hel1.your-objectstorage.com/s/v3/dd4507e4bb28758076183af491431ef62bf487d1_image.png)
+![IMG](https://hc-cdn.hel1.your-objectstorage.com/s/v3/79a1202f4cfd77c2f3573606f8ea53dfeae6c6ad_image.png)
 
 ## 🚀 Getting Started
 
