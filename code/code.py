@@ -1,85 +1,120 @@
+"""
+PicoDucky All-Features Example
+Demonstrates HID Keyboard, Mouse, RGB LEDs, and Button.
+(Yes I vibecoded ts)
+
+"""
+
 import time
 import board
 import digitalio
+import usb_hid
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.keycode import Keycode
-import usb_hid
+from adafruit_hid.mouse import Mouse
+from adafruit_rgbled import RGBLED
 
-# Setup RGB LED 1 (GP15, GP14, GP13)
-led1_red = digitalio.DigitalInOut(board.GP15)
-led1_green = digitalio.DigitalInOut(board.GP14)
-led1_blue = digitalio.DigitalInOut(board.GP13)
-led1_red.direction = led1_green.direction = led1_blue.direction = digitalio.Direction.OUTPUT
+# -----------------------------
+# Pin Definitions
+# -----------------------------
+BUTTON_PIN = board.GP11
 
-# Setup RGB LED 2 (GP20, GP19, GP18)
-led2_red = digitalio.DigitalInOut(board.GP20)
-led2_green = digitalio.DigitalInOut(board.GP19)
-led2_blue = digitalio.DigitalInOut(board.GP18)
-led2_red.direction = led2_green.direction = led2_blue.direction = digitalio.Direction.OUTPUT
+# RGB LED 1 (Status)
+LED1_R = board.GP12
+LED1_G = board.GP13
+LED1_B = board.GP14
 
-# Setup button on GP17
-button = digitalio.DigitalInOut(board.GP17)
-button.direction = digitalio.Direction.INPUT
-button.pull = digitalio.Pull.UP  # Uses internal pull-up resistor
+# RGB LED 0 (Activity)
+LED0_R = board.GP19
+LED0_G = board.GP20
+LED0_B = board.GP21
 
-# Create HID keyboard object
+# -----------------------------
+# Hardware Setup
+# -----------------------------
+# Button
+button = digitalio.DigitalInOut(BUTTON_PIN)
+button.switch_to_input(pull=digitalio.Pull.UP)
+
+# LEDs
+led1 = RGBLED(LED1_R, LED1_G, LED1_B, invert_pwm=True)
+led0 = RGBLED(LED0_R, LED0_G, LED0_B, invert_pwm=True)
+
+# HID Devices
 keyboard = Keyboard(usb_hid.devices)
+mouse = Mouse(usb_hid.devices)
 
-def set_color(r1, g1, b1, r2, g2, b2):
-    led1_red.value = r1
-    led1_green.value = g1
-    led1_blue.value = b1
-    led2_red.value = r2
-    led2_green.value = g2
-    led2_blue.value = b2
 
-# Cycle LEDs: red -> green -> blue (LOW = ON)
-for _ in range(5):
-    set_color(False, True, True, False, True, True)  # Red
-    time.sleep(0.1)
-    set_color(True, False, True, True, False, True)  # Green
-    time.sleep(0.1)
-    set_color(True, True, False, True, True, False)  # Blue
-    time.sleep(0.1)
+# -----------------------------
+# Helper Functions
+# -----------------------------
 
-# Turn off LEDs
-set_color(True, True, True, True, True, True)
+def led_set(color1, color0):
+    """Set both RGB LEDs."""
+    led1.color = color1
+    led0.color = color0
 
-print("Ready. Press the button!")
 
-# Loop: wait for button press
+def blink_leds(color1, color0, duration=0.2, times=2):
+    """Blink both LEDs."""
+    for _ in range(times):
+        led_set(color1, color0)
+        time.sleep(duration)
+        led_set((0, 0, 0), (0, 0, 0))
+        time.sleep(duration)
+
+
+def keyboard_demo():
+    """Send a simple keyboard payload."""
+    print("Keyboard demo: Opening Notepad and typing text...")
+    led_set((0, 0, 255), (0, 0, 255))  # Blue while typing
+    keyboard.send(Keycode.WINDOWS, Keycode.R)
+    time.sleep(0.3)
+    keyboard.write("notepad\n")
+    time.sleep(1)
+    keyboard.write("Hello from PicoDucky!\n")
+    blink_leds((0, 255, 0), (0, 255, 0), duration=0.1, times=3)  # Green success blink
+
+
+def mouse_demo():
+    """Move the mouse in a small square."""
+    print("Mouse demo: Moving cursor in a square...")
+    led_set((255, 255, 0), (255, 255, 0))  # Yellow while moving
+    for _ in range(4):
+        mouse.move(x=50)
+        time.sleep(0.2)
+        mouse.move(y=50)
+        time.sleep(0.2)
+        mouse.move(x=-50)
+        time.sleep(0.2)
+        mouse.move(y=-50)
+        time.sleep(0.2)
+    blink_leds((0, 255, 255), (0, 255, 255), duration=0.1, times=2)  # Cyan done
+
+
+def idle_animation():
+    """Soft LED breathing animation while idle."""
+    for i in range(0, 256, 5):
+        led_set((i, 0, 50), (0, 50, i))
+        time.sleep(0.01)
+    for i in range(255, -1, -5):
+        led_set((i, 0, 50), (0, 50, i))
+        time.sleep(0.01)
+
+
+# -----------------------------
+# Main Loop
+# -----------------------------
+print("PicoDucky All-Features Demo Started.")
+led_set((0, 0, 0), (0, 0, 0))
+
 while True:
-    if not button.value:  # Button is active-low
-        print("Button pressed!")
-
-        # Turn on both red LEDs
-        set_color(False, True, True, False, True, True)
-
-        # Type "Hello world"
-        keys = [
-            (Keycode.SHIFT, Keycode.H),  # H
-            Keycode.E,
-            Keycode.L,
-            Keycode.L,
-            Keycode.O,
-            Keycode.SPACEBAR,
-            Keycode.W,
-            Keycode.O,
-            Keycode.R,
-            Keycode.L,
-            Keycode.D,
-            Keycode.ENTER
-        ]
-
-        for key in keys:
-            if isinstance(key, tuple):
-                keyboard.press(*key)
-            else:
-                keyboard.press(key)
-            keyboard.release_all()
-            time.sleep(0.1)
-        set_color(False, True, True, False, True, True)
-
+    if not button.value:  # Button pressed
+        led_set((255, 0, 0), (255, 0, 0))  # Red indicates action start
+        keyboard_demo()
+        mouse_demo()
+        led_set((0, 255, 0), (0, 255, 0))  # Green indicates done
         while not button.value:
-            pass  # Wait for button release
-        time.sleep(0.05)  # Debounce delay
+            pass  # Wait for release
+    else:
+        idle_animation()
