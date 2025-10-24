@@ -12,6 +12,8 @@ A minimal RP2350-based USB dev board designed for Human Interface Device (HID) p
 
 ## Step 1: Install CircuitPython
 
+Go to [CircuitPython's Download Page](https://circuitpython.org/downloads)
+
 1. Download the `.UF2` for the Raspberry Pi Pico 2 (since PicoDucky uses the same chip)
 2. Plug in your PicoDucky while holding the BOOTSEL button to enter bootloader mode
 3. A drive called `RPI-RP2` should appear in your file explorer
