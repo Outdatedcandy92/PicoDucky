@@ -10,7 +10,8 @@ All source files for this board are located in `/src/V2.1`.
 
 [pd-usb-uvc](https://github.com/JBlitzar/pd-usb-uvc?tab=readme-ov-file) A UVC webcam implementation running on the Picoducky.
 
-![uvc demo](./attachments/demo.mp4)
+
+[demo.webm](https://github.com/user-attachments/assets/534093a0-0a27-4e04-8a0f-f4a369e56392)
 
 ## Features
 
