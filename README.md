@@ -2,7 +2,7 @@
 
 PicoDucky Version 2.1 is a minimalist, USB-stick-style RP2350 board designed for use as a security key or rubber ducky.
 
-![image](https://cdn.2008000.xyz/cdn/09-02-2026%2F53928cb8_image.jpeg)
+![image](./attachments/Image.jpg)
 
 All source files for this board are located in `/src/V2.1`.
 
@@ -10,7 +10,7 @@ All source files for this board are located in `/src/V2.1`.
 
 [pd-usb-uvc](https://github.com/JBlitzar/pd-usb-uvc?tab=readme-ov-file) A UVC webcam implementation running on the Picoducky.
 
-![[attachments/demo.webm]]
+![uvc demo](./attachments/demo.mp4)
 
 ## Features
 
@@ -24,9 +24,9 @@ All source files for this board are located in `/src/V2.1`.
 
 ## Schematic & PCB
 
-![image](https://cdn.2008000.xyz/cdn/09-02-2026%2F036e928e_image.png)
+![image](./attachments/schematic.png)
 
-![image](https://cdn.2008000.xyz/cdn/09-02-2026%2F476574a6_image.png)
+![image](./attachments/pcb.png)
 
 ## Getting Started
 
