@@ -6,7 +6,13 @@ PicoDucky Version 2.1 is a minimalist, USB-stick-style RP2350 board designed for
 
 All source files for this board are located in `/src/V2.1`.
 
-## 🔧 Features
+## Demo
+
+[pd-usb-uvc](https://github.com/JBlitzar/pd-usb-uvc?tab=readme-ov-file) A UVC webcam implementation running on the Picoducky.
+
+![[attachments/demo.webm]]
+
+## Features
 
 - RP2350 Microcontroller
 - Plug-and-play USB-A form factor
@@ -16,13 +22,13 @@ All source files for this board are located in `/src/V2.1`.
 - HID device capability
 - Security key functionality
 
-## 📐 Schematic & PCB
+## Schematic & PCB
 
 ![image](https://cdn.2008000.xyz/cdn/09-02-2026%2F036e928e_image.png)
 
 ![image](https://cdn.2008000.xyz/cdn/09-02-2026%2F476574a6_image.png)
 
-## 🚀 Getting Started
+## Getting Started
 
 ### As a HID Device
 
@@ -44,9 +50,11 @@ All source files for this board are located in `/src/V2.1`.
 5. Unplug and replug the USB to reboot the board
 6. Visit the [Pico Commissioner](https://www.picokeys.com/pico-commissioner/) to commission your security key
 
-## 💰 Reproduction Cost and Ordering Guide
+## Reproduction Cost and Ordering Guide
 
 When ordering through JLCPCB, several configurations are available with varying costs depending on component selection and assembly requirements. Pricing below assumes ordering 5 PCBs with 2 assembled.
+
+All the required files for production can be found under `/src/{revision}/Production`
 
 ### Cheapest Option
 *Not bad, but not the best option*
