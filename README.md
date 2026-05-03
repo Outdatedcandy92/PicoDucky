@@ -24,7 +24,7 @@ All source files for this board are located in `/src/V2.2`.
 To get started and use it as a security key
 1. Hold the boot button on the board while plugging in the USB-C cable (the button has a `B` mark beside it).
 2. The board will appear as a mass storage device.
-3. Drag and drop the `picofido.uf2` file from `/folder` onto the device.
+3. Drag and drop the `picofido.uf2` file from `/firmware` onto the device.
 
 The board will reboot, and the LEDs on the board should blink. It's now ready to be used as a FIDO security key.
 
