@@ -30,6 +30,8 @@ The board will reboot, and the LEDs on the board should blink. It's now ready to
 
 You can head over to [webauthn.io](https://webauthn.io/) to test out your key.
 
+Additional documentation can be found on [picoducky.rudymakes.com/docs](https://picoducky.rudymakes.com/docs)
+
 ## Hardware
 
 ### Pinout
